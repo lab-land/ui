@@ -22,10 +22,12 @@ export default function Navbar(props: Props) {
       setTimeout(() => {
         setIsOpenMenuHamburger(false)
         setIsClosingMenu(false)
-      }, 200)
+        document.body.classList.remove('overflow-hidden')
+      }, 300)
     }
     else {
       setIsOpenMenuHamburger(true)
+      document.body.classList.add('overflow-hidden')
     }
   }
 
@@ -33,7 +35,7 @@ export default function Navbar(props: Props) {
     <>
       {/* Version Tablets - Desktop  */}
       <nav
-        className={`flex bg-contain bg-transparent ${props.background}  justify-around items-center mb-2 `}
+        className={`flex bg-contain bg-transparent ${props.background}  items-center mb-2 justify-around `}
       >
         <div className="flex items-center w-2/3 sm:w-20 ">
           <Link
